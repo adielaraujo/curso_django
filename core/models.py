@@ -7,12 +7,19 @@ class Pessoa(models.Model):
     nome = models.CharField(max_length=100)
     endereco = models.CharField(max_length=200)
     telefone = models.CharField(max_length=20)
+    
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
 
     def __str__(self):
         return self.nome
 
 class Marca(models.Model):
     nome = models.CharField(max_length=50)
+
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
+
     def __str__(self):
         return self.nome
 
@@ -23,13 +30,24 @@ class Veiculo(models.Model):
     proprietario = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
     cor = models.CharField(max_length=15)
     observaces = models.TextField()
+
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
+
     def __str__(self):
-        return str(self.marca) + '-'+ self.placa + ' do Sr(a):' + str(self.proprietario)
-    
+        return (
+            str(self.marca) + '-'+ self.placa + ' do Sr(a):' 
+            + str(self.proprietario)
+        )
 
 class Parametros(models.Model):
     valor_hora = models.DecimalField(max_digits=5, decimal_places=2)
     valor_mes = models.DecimalField(max_digits=6, decimal_places=2)
+    
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    
+    objects = models.Manager()
+   
     def __str__(self):
         return 'Parâmentros gerais'
     
@@ -42,6 +60,9 @@ class MovRotativo(models.Model):
     valor_hora = models.DecimalField(max_digits=5, decimal_places=2)
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
     pago = models.BooleanField(default=False)
+
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
 
     def __str__(self):
         return str(self.veiculo)
@@ -59,14 +80,21 @@ class Mensalista(models.Model):
     inicio = models.DateField()
     valor_mes = models.DecimalField(max_digits=6, decimal_places=2)
 
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
+
+
     def __str__(self):
-        return str(self.veiculo+' - '+self.inicio) 
+        return str(self.veiculo)+' - '+str(self.inicio)
 
 class MovMensalista(models.Model):
     mensalista = models.ForeignKey(Mensalista, on_delete=models.CASCADE)
     dt_pagto = models.DateField()
     total = models.DecimalField(max_digits=6, decimal_places=2)
     
+    """ Para remover o erro d: E1101:Class 'Pessoa' has no 'objects' member """
+    objects = models.Manager()
+
 
     def __str__(self):
         return str(self.mensalista) +' - '+ str(self.total)
