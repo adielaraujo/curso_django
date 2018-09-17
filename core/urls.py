@@ -8,6 +8,8 @@ from .views import (
     lista_mensalistas,
     lista_movimentos_mensalistas,
     pessoa_novo,
+    veiculo_novo,
+    movimento_rotativo_novo
 )
 
 
@@ -15,10 +17,13 @@ from .views import (
 urlpatterns = [
     re_path(r'^$', home, name='core_home'),
     re_path(r'^pessoas/$', lista_pessoas, name='core_lista_pessoas'),
-    re_path(r'^pessoas-novo/$', pessoa_novo, name='core_pessoa_novo'),
+    re_path(r'^pessoa-novo/$', pessoa_novo, name='core_pessoa_novo'),
     re_path(r'^veiculos/$', lista_veiculos, name='core_lista_veiculos'),
+    re_path(r'^veiculo-novo/$', veiculo_novo, name='core_veiculo_novo'),
     re_path(r'^movimentos-rotativos/$', 
         lista_movimentos_rotativos, name='core_lista_movimentos_rotativos'),
+    re_path(r'^movimento-rotativo-novo/$', 
+        movimento_rotativo_novo, name='core_movimento_rotativo_novo'),
     re_path(r'^mensalistas/$', 
         lista_mensalistas, name='core_lista_mensalistas'),
     re_path(r'^movimentos-mensalistas/$', 

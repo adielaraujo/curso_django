@@ -2,8 +2,20 @@
 
 <ul>
 {% for veiculo in veiculos  %}
-    <li>{{veiculo.placa}} </li>
-
+    <li>{{veiculo}} </li>
 {% endfor %}
 
 </ul>
+
+
+<form action="{% url 'core_veiculo_novo' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Cadastrar</button>
+</form>
+    
+
+
