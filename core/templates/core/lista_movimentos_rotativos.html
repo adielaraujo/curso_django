@@ -2,7 +2,9 @@
 
 <ul>
 {% for movimento in rotativos  %}
-    <li>{{movimento}} </li>
+    <li>
+        <a href="{% url 'core_movimento_rotativo_update' movimento.id %}" > {{movimento}} </a>
+    </li>
 
 {% endfor %}
 

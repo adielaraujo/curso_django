@@ -2,8 +2,29 @@
 
 <ul>
 {% for movimento in movimentosMensalistas  %}
-    <li>{{movimento}} </li>
+
+    <li>
+        <a href="{% url 'core_mov_mensalista_update' movimento.id %}" > {{movimento}} </a>
+    </li>
 
 {% endfor %}
 
 </ul>
+
+
+
+
+
+
+<form action="{% url 'core_movimento_mensalista_novo' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button type="submit">Cadastrar</button>
+</form>
+    
+    
+
+

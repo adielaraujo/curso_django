@@ -2,7 +2,10 @@
 
 <ul>
 {% for veiculo in veiculos  %}
-    <li>{{veiculo}} </li>
+    <li>
+        <a href="{% url 'core_veiculo_update' veiculo.id %}" > {{veiculo}} </a>
+    </li>
+
 {% endfor %}
 
 </ul>

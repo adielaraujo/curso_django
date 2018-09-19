@@ -23,3 +23,14 @@ class MovRotativoForm(ModelForm):
         model  = MovRotativo
         fields = '__all__'
 
+class MensalistaForm(ModelForm):
+    class Meta:
+        model  = Mensalista
+        fields = '__all__'
+
+
+class MovMensalistaForm(ModelForm):
+    class Meta:
+        model  = MovMensalista
+        fields = '__all__'
+
