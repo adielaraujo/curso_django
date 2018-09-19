@@ -1,1 +1,4 @@
 venvProjetoFinal
+.idea
+*.sqlite3
+*pyc
