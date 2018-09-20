@@ -1,18 +1,24 @@
-<h2>Updating Movimento mensalista: {{mov_mensalista}}</h2>
+
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        <h2>Updating Movimento mensalista: {{mov_mensalista}}</h2>
+        <form action="{% url 'core_mov_mensalista_update' mov_mensalista.id %}" method="POST">
+
+            {% csrf_token %}
+
+            {{form|bootstrap}}
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="{% url 'core_mov_mensalista_delete' mov_mensalista.id%}" class="btn btn-danger"> Delete </a>
+        </form>
+    </div>
+</div>
 
 
 
-
-<form action="{% url 'core_mov_mensalista_update' mov_mensalista.id %}" method="POST">
-
-    {% csrf_token %}
-
-    {{form.as_p}}
-
-    <button type="submit">Salvar</button>
-</form>
-
-
-
-<a href="{% url 'core_mov_mensalista_delete' mov_mensalista.id%}"> Delete </a>
-
+{% endblock  %}
