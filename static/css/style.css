@@ -1,0 +1,33 @@
+.form-login{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.retirar-margem{
+    margin: 0;
+}
+
+.margem2em{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+
+.butobtnEfetuarLoginn{
+    margin-top: 1em !important;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+.login1{
+    width: 70px;
+    text-align: left !important;
+}
+.login2{
+    width: 230px;
+    text-align: left !important;
+}

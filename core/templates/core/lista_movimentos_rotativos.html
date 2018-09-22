@@ -31,8 +31,8 @@
                     <th scope="row">{{rotativo.id}}</th>
                     <td>{{rotativo.checkin}}</td>
                     <td>{{rotativo.checkout}}</td>
-                    <td>{{rotativo.valor_hora}}</td>
-                    <td>{{rotativo.veiculo}}</td>
+                    <td> {{rotativo.valor_hora}}</td>
+                    <td> <a href="{% url 'core_movimento_rotativo_update' rotativo.id %}" > {{rotativo.veiculo}}  </a> </td>
                     <td>{{rotativo.pago}}</td>
                 </tr>
                 {% endfor %}

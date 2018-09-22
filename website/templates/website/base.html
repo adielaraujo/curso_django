@@ -1,11 +1,14 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="pt-bt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
@@ -13,8 +16,34 @@
     <title>Document</title>
 </head>
 <body>
-    {% block main %}
+    <div class="container">
+        {% block cabecalho  %}
+            <div class="row">
+                <div class="col-6">
+                    <h1>Estacionamento 24 Horas</h1>
+                    <span>Slogan da empresa aqui</span>
+                </div>
+                <div class="col-6 text-right">
+                    <img class="rounded img-fluid"  style=" width: 50% ;"src="{% static 'img/logo.png' %}" alt="Estacionamento SA">
+                </div>
+            </div>
+            {% include "website/menu.html" %}
+            {% include 'messages.html' %}
+        {% endblock  %}
+
+        {% block corpo %}
+            
+        {% endblock  %}
         
-    {% endblock  %}
+        {% block rodape %}
+            <div class="row-space text-center">
+                    <p>
+                        Copyright - Todos os direitos reservados | Desenvolvido por Fulano de tal
+                    </p>
+            </div>
+        
+        {% endblock  %}
+
+    </div>
 </body>
 </html>

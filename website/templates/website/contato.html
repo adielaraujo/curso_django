@@ -1,0 +1,73 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block corpo %}
+
+    <div class="row row-space">
+            
+        <div class="col-6">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" id="inputNome" name="inputNome" placeholder="Nome">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputSobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="inputSobrenome" name="inputSobrenome" placeholder="Sobrenome">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputEndereco">Endereço</label>
+                        <input type="text" class="form-control" id="inputEndereco" name="inputEndereco" placeholder="Rua,número e cep">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkReceberNoticia" name="checkReceberNoticia">
+                        <label class="form-check-label" for="checkReceberNoticia">
+                            Receber noticias
+                        </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputMensagem">Mensagem do contato</label>
+                            <textarea cols="65" rows="10"  class="form-control" name="inputMensagem" 
+                                placeholder="Digite sua mensagem"></textarea>
+                            
+                            
+                        </div>
+                    </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <p>
+                Mussum Ipsum, cacilds vidis litro abertis. Mé faiz elementum girarzis, nisi eros vermeio. A ordem dos tratores não
+                altera o pão duris. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl.
+                Casamentiss faiz malandris se pirulitá.
+            </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.9856376317084!2d-60.
+                67416668467234!3d2.820324355871132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                1!3m3!1m2!1s0x8d9306743342f66f%3A0x9b15865391e44de6!2sMonumento
+                +aos+Garimpeiros+1960%2F70!5e0!3m2!1spt-BR!2sbr!4v1537642669976" 
+                width="99%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    
+    </div>
+
+
+{% endblock  %}

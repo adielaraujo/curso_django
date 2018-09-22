@@ -1,0 +1,40 @@
+{% extends "website/base.html" %}
+{% load static %}
+
+{% block corpo %}
+    <div class="row">
+        <div class="col-12">
+            <h1>Saiba mais sobre os nossos serviços</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h2>Serviços para seu bolso</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <p>
+                Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde
+                o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de
+                modelos de tipos. Lorem Ipsum sobreviveu não
+                só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se
+                popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente
+                quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker
+                Mussum Ipsum, cacilds vidis litro abertis. Interagi no mé, cursus quis, vehicula ac nisi. Paisis, filhis, espiritis
+                santis. Praesent malesuada urna nisi, quisvolutpat erat hendrerit non. Nam vulputate dapibus. Delegadis gente finis, bibendum egestas augue arcu ut est. 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 text-center">
+                <img class="rounded img-fluid " style=" width: 80% ;" src="{% static 'img/servico1.png' %}" alt="Serviço 1">
+        </div>
+        <div class="col-6">
+                <img class="rounded img-fluid "  style=" width: 80% ;" src="{% static 'img/servico2.png' %}" alt="Serviço 2">
+        </div>
+    </div>
+
+{% endblock  %}

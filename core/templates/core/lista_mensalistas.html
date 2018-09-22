@@ -31,7 +31,7 @@
                 {% for mens in mensalistas %}
                 <tr>
                     <th scope="row">{{mens.id}}</th>
-                    <td>{{mens.veiculo}}</td>
+                    <td><a href="{% url 'core_mensalista_update' mens.id %}" > {{mens.veiculo}}</a> </td>
                     <td>{{mens.inicio}}</td>
                     <td>{{mens.valor_mes}}</td>
                 </tr>

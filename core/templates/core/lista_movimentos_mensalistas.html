@@ -29,7 +29,7 @@
                 {% for movMens in movimentosMensalistas %}
                 <tr>
                     <th scope="row">{{movMens.id}}</th>
-                    <td>{{movMens.mensalista}}</td>
+                    <td><a href="{% url 'core_mov_mensalista_update' movMens.id %}" >{{movMens.mensalista}} </a> </td>
                     <td>{{movMens.dt_pagto}}</td>
                     <td>{{movMens.total}}</td>
                 </tr>

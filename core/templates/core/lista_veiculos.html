@@ -31,7 +31,7 @@
                 <tr>
                     <th scope="row">{{veiculo.id}}</th>
                     <td>{{veiculo.marca}}</td>
-                    <td>{{veiculo.placa}}</td>
+                    <td> <a href="{% url 'core_veiculo_update' veiculo.id %}" > {{veiculo.placa}} </a> </td>
                     <td>{{veiculo.proprietario}}</td>
                     <td>{{veiculo.cor}}</td>
                 </tr>

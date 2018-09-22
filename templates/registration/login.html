@@ -1,38 +1,63 @@
 {% extends "base.html" %}
 
+{% block menu %}
+
+{% endblock  %}
+
 {% block main %}
+    <div class="text-center form-login" >
+        <div>
+            {% if form.errors %}
+            <p> Login ou senha inválidos. Por favor digite um usuário e uma senha válida</p>
+            {% endif %}
 
-{% if form.errors %}
-<p> Login ou senha inválidos. Por favor digite um usuário e uma senha válida</p>
-{% endif %}
+            {% if next %}
+                {% if user.is_authenticated %}
+                <p>Sua conta não tem acesso a esta página. Para prosseguir,
+                    Por favor, faça o login com uma conta que tenha acesso.</p>
+                {% else %}
+                <p>Para acessar a página, por favor, faça o login com uma conta que tenha acesso</p>
+                {% endif %}
+            {% endif %}
+        
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td class="login1">
+                            {{ form.username.label_tag }}
+                        </td>
+                        <td class="login2">
+                            {{ form.username }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="login1">
+                            {{ form.password.label_tag }}
+                        </td>
+                        <td class="login2">
+                            {{ form.password }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="login1" >
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Para acessar a página efetue login no sistema</p>
-    {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login">
-<input type="hidden" name="next" value="{{ next }}">
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+                        </td>
+                        <td class="login2">
+                            <input class="btn btn-primary butobtnEfetuarLoginn"  type="submit" value="Login">
+                            <a class="btn btn-info butobtnEfetuarLoginn" href="{% url 'website_home' %}">Voltar ao web site</a>
+                            <p class="retirar-margem"><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></p>
+                        </td>
+                    </tr>
+                </table>
+                                
+                               
+                                
+                               
+                      
+            
+                
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+    </div>
 {% endblock %}
