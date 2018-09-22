@@ -5,13 +5,10 @@
 {% block main %}
 
 
-<div class="row">
-    <div class="col-12">
-        <h2>Lista de mensalistas</h2>
-    </div>
-</div>
+
 <div class="row">
     <div class="col-sm-6">
+        <h2>Cadastro de mensalistas</h2>
         <form action="{% url 'core_mensalista_novo' %}" method="POST">
             {% csrf_token %}
             {{form|bootstrap}}
@@ -20,13 +17,27 @@
     </div>
     
     <div class="col-sm-6">
-        <ul>
-            {% for mensalista in mensalistas  %}
-                <li>
-                    <a href="{% url 'core_mensalista_update' mensalista.id %}" > {{mensalista}} </a>
-                </li>
-            {% endfor %}
-        </ul>
+        <h2>Lista de mensalistas</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Veículo</th>
+                    <th scope="col">inicio</th>
+                    <th scope="col">Valor mensal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mens in mensalistas %}
+                <tr>
+                    <th scope="row">{{mens.id}}</th>
+                    <td>{{mens.veiculo}}</td>
+                    <td>{{mens.inicio}}</td>
+                    <td>{{mens.valor_mes}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 
